@@ -1,0 +1,191 @@
+{
+  "assets": {
+    "art/app-icon.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "A simple rounded abstract breath wave forming a circle in teal on charcoal, centred, icon composition. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "art/dev-cover.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "A wide abstract composition of concentric expanding rings of soft teal light with one slow wave passing through. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1536x1536"
+    },
+    "art/explainer-agent.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "An abstract glowing geometric cube sending a thin beam of light toward a closed arch. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "art/explainer-breath.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "Abstract soft expanding rings of light breathing outward from a centre point. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "art/explainer-gate.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "An abstract softly lit arch with a thin line of light held still in front of it. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "art/explainer-receipt.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "An abstract chain of small glowing linked squares receding into the distance. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "art/hero.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "A wide abstract landscape of slow luminous breathing waves rising and falling across a dark horizon. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1536x1536"
+    },
+    "art/logo.webp": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Generated under NanoGPT and upstream model terms. Original abstract style.",
+      "model": "blackforestlabs/flux-3/klein/text-to-image",
+      "prompt": "A single glowing soft teal circle with a thin concentric ring on a near-black background, centred. Original abstract digital illustration, dark teal and charcoal palette, soft light, calm, minimal, no text, no letters, no logos, no people, no faces.",
+      "provider": "NanoGPT",
+      "size": "1024x1024"
+    },
+    "cues/approved.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Approved",
+      "provider": "ElevenLabs",
+      "seconds": 0.5
+    },
+    "cues/breathe-in.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Breathe in",
+      "provider": "ElevenLabs",
+      "seconds": 0.6
+    },
+    "cues/breathe-out.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Breathe out",
+      "provider": "ElevenLabs",
+      "seconds": 0.44
+    },
+    "cues/camera-on.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A soft short rising electronic tone, quiet and subtle",
+      "provider": "ElevenLabs",
+      "seconds": 0.52
+    },
+    "cues/check-declined.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Check declined",
+      "provider": "ElevenLabs",
+      "seconds": 0.65
+    },
+    "cues/chime.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A gentle warm two-note chime, soft and reassuring",
+      "provider": "ElevenLabs",
+      "seconds": 1.04
+    },
+    "cues/deny.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A soft low muted tone, subtle and non-alarming",
+      "provider": "ElevenLabs",
+      "seconds": 0.73
+    },
+    "cues/follow-the-circle.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Follow the circle",
+      "provider": "ElevenLabs",
+      "seconds": 0.78
+    },
+    "cues/not-matched.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Not matched, new pattern",
+      "provider": "ElevenLabs",
+      "seconds": 1.25
+    },
+    "cues/pause.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_multilingual_v2",
+      "prompt": "Pause",
+      "provider": "ElevenLabs",
+      "seconds": 0.37
+    },
+    "cues/tick.mp3": {
+      "date": "2026-11-07",
+      "key_used": "ELeven_Lab_2009_API_KEY",
+      "licence": "Generated under the account's ElevenLabs plan terms",
+      "model": "eleven_text_to_sound_v2",
+      "prompt": "A very soft single wooden tick, subtle and quiet",
+      "provider": "ElevenLabs",
+      "seconds": 0.52
+    },
+    "drafts/demo-video-script.md": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Draft only. Needs human review.",
+      "model": "gemini-2.5-flash",
+      "prompt": "Write a 2 to 3 minute demo video script for Proof of Breath. Beats: a headline about an AI agent deleting a production database; Claude Code tries terraform destroy and is blocked and a gate window opens; consent screen, camera-on indicator, random pattern, target and measured curves converging, live pulse indicator, pass and the command proceeds; attack montage of a photo, a replayed video and ignoring the pacer, all rejected; the typed fallback for accessibility; the receipts page with the chain verified and an evaluation chart. Close with: Proves a live, attentive human. Never stores video. Do not invent numbers: write [RESULTS PENDING] where numbers belong. Describe it only as checking presence and attention.",
+      "provider": "NanoGPT"
+    },
+    "drafts/dev-post-draft.md": {
+      "date": "2026-11-07",
+      "key_used": "NanoGPT_2009_API_KEY",
+      "licence": "Draft only. Needs human review.",
+      "model": "gemini-2.5-flash",
+      "prompt": "Draft a DEV.to post for a project called Proof of Breath, for the Presage SmartSpectra SDK Challenge. It holds destructive commands from AI coding agents until a live person follows a random breathing pattern measured by a webcam using the SDK. Use these exact sections: What I Built, Demo, Code, How It Responds to Human Signals, Prize Categories, Consent and Data Handling, Agent Session. Rules: describe it only as checking presence and attention, and say plainly it is not identity authentication. Make no statements about wellbeing or the body beyond 'a live pulse signal is present'. Do not invent any results or numbers: write [RESULTS PENDING] wherever evaluation numbers belong. Write in plain, direct English.",
+      "provider": "NanoGPT"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "proof-of-breath-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runs the Presage SmartSpectra SDK next to the webcam and streams metrics to the backend.",
+  "type": "module",
+  "main": "src/index.mjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "check": "node src/check.mjs",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "@smartspectra/node-sdk": "3.4.0",
+    "ws": "8.18.0"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

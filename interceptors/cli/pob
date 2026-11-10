@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""pob run -- <command> | pob status | pob receipts | pob verify-chain"""
+import argparse
+import os
+import shlex
+import subprocess
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "common"))
+import pob_client  # noqa: E402
+
+
+def run(argv: list[str]) -> int:
+    if not argv:
+        print("Usage: pob run -- <command>", file=sys.stderr)
+        return 2
+    single = len(argv) == 1
+    command = argv[0] if single else shlex.join(argv)
+    allowed, message = pob_client.gate_command(command, "cli", os.getcwd())
+    if not allowed:
+        print(f"Blocked. {message}", file=sys.stderr)
+        return 1
+    if message:
+        print(message, file=sys.stderr)
+    return subprocess.run(command if single else argv, shell=single).returncode
+
+
+def status() -> int:
+    cfg = pob_client.load_config()
+    try:
+        pob_client.get("/api/ping")
+        print(f"Backend: reachable at {cfg['url']}")
+        bridge = pob_client.get("/api/bridge/status")
+        print(f"Sensor bridge: {'connected' if bridge['connected'] else 'not connected'}")
+        return 0
+    except (pob_client.GateUnreachable, pob_client.GateRefused) as exc:
+        print(f"Backend: not reachable ({exc})", file=sys.stderr)
+        return 1
+
+
+def receipts() -> int:
+    try:
+        rows = pob_client.get("/api/receipts?limit=25")
+    except (pob_client.GateUnreachable, pob_client.GateRefused) as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    print(f"{rows['total']} receipts")
+    for r in rows["items"]:
+        print(f"{r['created_at'][:19]}  {r['decision']:<18} {r['method']:<10} {r['source']:<12} {r['command_sha256'][:12]}")
+    return 0
+
+
+def verify_chain() -> int:
+    try:
+        out = pob_client.get("/api/receipts/verify-chain")
+    except (pob_client.GateUnreachable, pob_client.GateRefused) as exc:
+        print(exc, file=sys.stderr)
+        return 1
+    if out["valid"]:
+        print(f"Chain verified: {out['checked']} receipts")
+        return 0
+    print(f"Chain broken at {out['broken_at']}: {out['reason']}", file=sys.stderr)
+    return 1
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(prog="pob")
+    sub = parser.add_subparsers(dest="action", required=True)
+    sub.add_parser("run").add_argument("rest", nargs=argparse.REMAINDER)
+    for name in ("status", "receipts", "verify-chain"):
+        sub.add_parser(name)
+    args = parser.parse_args()
+    if args.action == "run":
+        rest = args.rest[1:] if args.rest[:1] == ["--"] else args.rest
+        return run(rest)
+    return {"status": status, "receipts": receipts, "verify-chain": verify_chain}[args.action]()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

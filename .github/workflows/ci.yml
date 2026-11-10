@@ -1,0 +1,44 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_USER: pob, POSTGRES_PASSWORD: pob, POSTGRES_DB: pob_test }
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U pob" --health-interval 5s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gitleaks/gitleaks-action@v2
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Backend
+        working-directory: backend
+        run: |
+          pip install -r requirements-dev.txt
+          cat > test.env <<ENV
+          DATABASE_URL=postgresql+asyncpg://pob:pob@127.0.0.1:5432/pob_test
+          POB_HMAC_SECRET=ci-only-ci-only-ci-only-ci-only-ci-only
+          POB_BRIDGE_TOKEN=ci-only-bridge-token
+          POB_INTERCEPTOR_TOKEN=ci-only-interceptor-token
+          POB_OWNER_PASSWORD=ci-only-owner
+          POB_JURY_PASSWORD=ci-only-jury
+          POB_PUBLIC_URL=http://testserver
+          POB_SIM_WARMUP_S=0.2
+          POB_LIVE_WARMUP_S=0.2
+          POB_FALLBACK_DELAY_S=1
+          POB_VIEWER_GRACE_S=2
+          POB_LOGIN_RATE_PER_MIN=1000
+          ENV
+          POB_TEST_ENV_FILE=test.env POB_ENV_FILE=test.env pytest -q
+      - name: Bridge
+        working-directory: bridge
+        run: npm ci && npm test
+      - name: Frontend
+        working-directory: frontend
+        run: npm ci && npm run build

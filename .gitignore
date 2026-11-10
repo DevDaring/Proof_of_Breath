@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+**/.venv/
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+frontend/dist/
+e2e/test-results/
+e2e/playwright-report/
+*.log
+e2e/.coverage/
+backend/test.env

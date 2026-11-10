@@ -1,0 +1,21 @@
+# PostgreSQL only. The port stays on loopback.
+services:
+  postgres:
+    image: postgres:16
+    container_name: pob-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pob
+      POSTGRES_PASSWORD: ${POB_DB_PASSWORD:-pob}
+      POSTGRES_DB: proof_of_breath
+    ports:
+      - "127.0.0.1:${POB_DB_PORT:-5432}:5432"
+    volumes:
+      - pob-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pob -d proof_of_breath"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  pob-db-data:
